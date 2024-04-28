@@ -19,7 +19,7 @@ class OnBordingScreen extends StatelessWidget {
             children: [
               DocLogAndName(),
               SizedBox(
-                height: 30.h,
+                height: 30.h, 
               ),
               DoctorImageAndText(),
               Padding(
