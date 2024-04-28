@@ -2,7 +2,6 @@ import 'package:doc_doc_app/core/Helpers/extensions.dart';
 import 'package:doc_doc_app/core/Routing/routes.dart';
 import 'package:doc_doc_app/core/theming/colors.dart';
 import 'package:doc_doc_app/core/theming/text_style.dart';
-import 'package:doc_doc_app/features/login/ui/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
