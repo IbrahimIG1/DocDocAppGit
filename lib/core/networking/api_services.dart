@@ -14,7 +14,7 @@ abstract class ApiServices {
   @POST(ApiConstance.login)
   Future<LoginResponce> login(@Body() LoginRequestBody loginRequestBody);
 
-  // انا المفروض كنت هكتب الكود دا كدا علشا العمل لوجين بس الاو جنيرات عملها ومش مضطر أكتبها خلاص
+  // انا المفروض كنت هكتب الكود دا كدا علشان العمل لوجين بس الاوتو جنيرات عملها ومش مضطر أكتبها خلاص
   // thanks retrofit
 
   
