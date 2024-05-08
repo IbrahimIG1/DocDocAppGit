@@ -1,3 +1,4 @@
+import 'package:doc_doc_app/core/Helpers/app_regex.dart';
 import 'package:doc_doc_app/core/Helpers/spacer_helper.dart';
 import 'package:doc_doc_app/core/widgets/text_form_feild.dart';
 import 'package:doc_doc_app/features/login/logic/cubit/login_cubit.dart';
@@ -13,23 +14,40 @@ class EmailAndPassword extends StatefulWidget {
 }
 
 class _EmailAndPasswordState extends State<EmailAndPassword> {
-  
   bool isObscureText = true;
   // validation variables
   bool hasLowerCase = false;
   bool hasUpperCase = false;
-  bool hasSpecialCharacters = false;
+  bool hasSpecialCharacter = false;
   bool hasNumber = false;
-  bool hasMinLenght = false;
+  bool hasMinLength = false;
   late TextEditingController passwordController;
 
   @override
   void initState() {
     super.initState();
     passwordController = context.read<LoginCubit>().passwordController;
+    setUpPasswodControllerListen();
   }
 
-  
+  void setUpPasswodControllerListen() {
+    // listen to user password and check about
+    passwordController.addListener(() {
+      setState(() {
+        hasLowerCase = AppRegex.hasLowerCase(
+            context.read<LoginCubit>().passwordController.text);
+        hasUpperCase = AppRegex.hasUpperCase(
+            context.read<LoginCubit>().passwordController.text);
+        hasMinLength = AppRegex.hasMinLength(
+            context.read<LoginCubit>().passwordController.text);
+        hasSpecialCharacter = AppRegex.hasSpecialCharacter(
+            context.read<LoginCubit>().passwordController.text);
+        hasNumber = AppRegex.hasNumber(
+            context.read<LoginCubit>().passwordController.text);
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -39,7 +57,9 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
           AppTextFormFeild(
             hintText: 'Email',
             validator: (value) {
-              if (value == null || value.isEmpty) {
+              if (value == null ||
+                  value.isEmpty ||
+                  !AppRegex.isEmailValid(value)) {
                 return 'please enter a valid email';
               }
             },
@@ -69,12 +89,17 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
           PasswordValidation(
               hasLowerCase: hasLowerCase,
               hasUpperCase: hasUpperCase,
-              hasSpecialCharacters: hasSpecialCharacters,
+              hasSpecialCharacters: hasSpecialCharacter,
               hasNumber: hasNumber,
-              hasMinLenght: hasMinLenght),
-              
+              hasMinLenght: hasMinLength),
         ],
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    passwordController.dispose();
+    super.dispose();
   }
 }

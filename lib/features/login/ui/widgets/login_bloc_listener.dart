@@ -58,7 +58,9 @@ class LoginBlocListener extends StatelessWidget {
         ),
         actions: [
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              context.pop();
+            },
             child: Text(
               'Get it',
               style: TextStyles.font14BlueSemiBold,
