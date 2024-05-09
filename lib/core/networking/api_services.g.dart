@@ -25,7 +25,8 @@ class _ApiServices implements ApiServices {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = loginRequestBody;
+    final _data = <String, dynamic>{};
+    _data.addAll(loginRequestBody.toJson());
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<LoginResponce>(Options(
       method: 'POST',

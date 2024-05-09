@@ -14,20 +14,6 @@ abstract class ApiServices {
   @POST(ApiConstance.login)
   Future<LoginResponce> login(@Body() LoginRequestBody loginRequestBody);
 
-
-
-// @RestApi(baseUrl: ApiConstants.apiBaseUrl)
-// abstract class ApiService {
-//   factory ApiService(Dio dio, {String baseUrl}) = _ApiService;
-
-//   @POST(ApiConstants.login)
-//   Future<LoginResponse> login(
-//     @Body() LoginRequestBody loginRequestBody,
-//   );
-
-
-
-
   // انا المفروض كنت هكتب الكود دا كدا علشان العمل لوجين بس الاوتو جنيرات عملها ومش مضطر أكتبها خلاص
   // thanks retrofit
 

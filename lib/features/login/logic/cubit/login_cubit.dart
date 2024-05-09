@@ -13,7 +13,7 @@ TextEditingController passwordController = TextEditingController();
 TextEditingController emailController = TextEditingController();
 
   void emitLoginStates(LoginRequestBody loginRequestBody) async {
-    const LoginState.loading();
+    emit(const LoginState.loading());
     final response = await _loginRepo.login(loginRequestBody);
 /*
   (response.when): دي فانكشن من الاوتوجنيرات بتاع 
