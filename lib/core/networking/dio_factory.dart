@@ -14,12 +14,15 @@ class DioFactory {
       dio = Dio();
       dio!
         ..options.connectTimeout = timeOut
+        // ..options.contentType =Headers.formUrlEncodedContentType
         ..options.receiveTimeout = timeOut;
+      addDioInterceptor();
       return dio!;
     } else {
       return dio!;
     }
   }
+
   /// this PrettyDioLogger To show me data moving to nd from api in terminal (only for that)
   static void addDioInterceptor() {
     dio!.interceptors.add(PrettyDioLogger(
