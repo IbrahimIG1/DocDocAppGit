@@ -6,7 +6,7 @@ class SignUpRequest {
   String name;
   String email;
   String phone;
-  String gender;
+  int gender;
   String password;
   @JsonKey(name:'password_confirmation')
   String passwordConfirmation;
