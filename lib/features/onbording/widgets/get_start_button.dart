@@ -12,16 +12,16 @@ class GetSatrtButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () {
-        context.pushNamed(Routes.loginScreen);
+        context.pushNamed(Routes.homeScreen);
       },
       child: Text(
         'Get Started',
         style: TextStyles.font16WhiteMeduim,
       ),
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(ColorsManager.mainBlue),
+        backgroundColor: WidgetStateProperty.all(ColorsManager.mainBlue),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        minimumSize: MaterialStateProperty.all(Size(double.infinity, 52.h)),
+        minimumSize: WidgetStateProperty.all(Size(double.infinity, 52.h)),
       ),
     );
   }
