@@ -54,7 +54,7 @@ class LoginBlocListener extends StatelessWidget {
         ),
         content: Text(
           error,
-          style: TextStyles.font16lightGreyMedium,
+          style: TextStyles.font16GreyLightMedium,
         ),
         actions: [
           TextButton(
@@ -63,7 +63,7 @@ class LoginBlocListener extends StatelessWidget {
             },
             child: Text(
               'Get it',
-              style: TextStyles.font14BlueSemiBold,
+              style: TextStyles.font14GreyDarkSemiBold,
             ),
           )
         ],

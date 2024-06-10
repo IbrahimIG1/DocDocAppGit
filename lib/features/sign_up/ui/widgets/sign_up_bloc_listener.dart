@@ -14,7 +14,9 @@ class SignUpBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<SignUpCubit, SignUpState>(
       listenWhen: (previous, current) =>
-          current is SignUpLoading || current is SignUpSuccess || current is SignUpError,
+          current is SignUpLoading ||
+          current is SignUpSuccess ||
+          current is SignUpError,
       listener: (context, state) {
         state.whenOrNull(
           signUpLoading: () => showDialog(
@@ -82,7 +84,7 @@ class SignUpBlocListener extends StatelessWidget {
         ),
         content: Text(
           error,
-          style: TextStyles.font16lightGreyMedium,
+          style: TextStyles.font16GreyLightMedium,
         ),
         actions: [
           TextButton(
@@ -91,7 +93,7 @@ class SignUpBlocListener extends StatelessWidget {
             },
             child: Text(
               'Get it',
-              style: TextStyles.font14BlueSemiBold,
+              style: TextStyles.font14GreyDarkSemiBold,
             ),
           )
         ],

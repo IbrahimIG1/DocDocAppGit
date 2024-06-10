@@ -34,7 +34,7 @@ class AppTextFormFeild extends StatelessWidget {
       decoration: InputDecoration(
           isDense: true,
           hintText: hintText,
-          hintStyle: hintTextStyle ?? TextStyles.font16lightGreyMedium,
+          hintStyle: hintTextStyle ?? TextStyles.font16GreyLightMedium,
           focusedBorder: foucedBorder ??
               OutlineInputBorder(
                 borderSide: const BorderSide(
