@@ -12,7 +12,7 @@ class GetSatrtButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () {
-        context.pushNamed(Routes.homeScreen);
+        context.pushReplacmentNamed(Routes.homeScreen);
       },
       child: Text(
         'Get Started',
