@@ -1,9 +1,8 @@
-import 'package:doc_doc_app/core/theming/colors.dart';
-import 'package:doc_doc_app/core/theming/text_style.dart';
+import 'package:doc_doc_app/core/Helpers/spacer_helper.dart';
+import 'package:doc_doc_app/features/home/ui/widgets/doctor_blue_container.dart';
 import 'package:doc_doc_app/features/home/ui/widgets/hi_name.dart';
 import 'package:doc_doc_app/features/home/ui/widgets/nofication_icon.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,7 +15,7 @@ class HomeScreen extends StatelessWidget {
         child: Container(
           margin: const EdgeInsets.fromLTRB(20, 16, 20, 20),
           width: double.infinity,
-          child: const Column(
+          child: Column(
             children: [
               Row(
                 children: [
@@ -25,6 +24,9 @@ class HomeScreen extends StatelessWidget {
                   NotificationIcon(),
                 ],
               ),
+              vericalSpace(18),
+              DoctorBlueContainer(),
+
               // Padding(
               //   padding: const EdgeInsets.all(16.0),
               //   child: Column(
