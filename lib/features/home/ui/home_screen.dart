@@ -1,5 +1,7 @@
 import 'package:doc_doc_app/core/Helpers/spacer_helper.dart';
 import 'package:doc_doc_app/features/home/ui/widgets/doctor_blue_container.dart';
+import 'package:doc_doc_app/features/home/ui/widgets/doctor_speciality_listview.dart';
+import 'package:doc_doc_app/features/home/ui/widgets/doctor_speciality_see_all.dart';
 import 'package:doc_doc_app/features/home/ui/widgets/hi_name.dart';
 import 'package:doc_doc_app/features/home/ui/widgets/nofication_icon.dart';
 import 'package:flutter/material.dart';
@@ -17,16 +19,19 @@ class HomeScreen extends StatelessWidget {
           width: double.infinity,
           child: Column(
             children: [
-              Row(
+              const Row(
                 children: [
                   HiName(),
                   Spacer(),
                   NotificationIcon(),
                 ],
               ),
-              vericalSpace(18),
-              DoctorBlueContainer(),
-
+              verticalSpace(18),
+              const DoctorBlueContainer(),
+              verticalSpace(18),
+              const DoctorSpecialitySeeAll(),
+              verticalSpace(18),
+              const DoctorSpecialityListView(),
               // Padding(
               //   padding: const EdgeInsets.all(16.0),
               //   child: Column(

@@ -65,7 +65,7 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
             },
             controller: context.read<LoginCubit>().emailController,
           ),
-          vericalSpace(18),
+          verticalSpace(18),
           AppTextFormFeild(
             hintText: 'password',
             validator: (value) {
@@ -85,7 +85,7 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
                     ? Icons.visibility_off
                     : Icons.visibility_outlined)),
           ),
-          vericalSpace(24),
+          verticalSpace(24),
           PasswordValidation(
               hasLowerCase: hasLowerCase,
               hasUpperCase: hasUpperCase,

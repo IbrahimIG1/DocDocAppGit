@@ -39,9 +39,13 @@ class TextStyles {
 
   // Colors Grey
   static TextStyle font11GreyLightRegular = TextStyle(
-    fontSize: 13.sp,
+    fontSize: 11.sp,
     fontWeight: FontWeightHelper.regular,
     color: ColorsManager.greyLight,
+  );static TextStyle font12GreyDarkRegular = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorsManager.greyDark,
   );
   static TextStyle font13GreyDarkRegular = TextStyle(
     fontSize: 13.sp,
@@ -50,6 +54,11 @@ class TextStyles {
   );
   static TextStyle font14GreyDarkSemiBold = TextStyle(
     fontSize: 14.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: ColorsManager.greyDark,
+  );
+  static TextStyle font18GreyDarkSemiBold = TextStyle(
+    fontSize: 18.sp,
     fontWeight: FontWeightHelper.semiBold,
     color: ColorsManager.greyDark,
   );

@@ -32,7 +32,7 @@ class DoctorBlueContainer extends StatelessWidget {
                       style: TextStyles.font20WhiteMeduim,
                       textAlign: TextAlign.start,
                     ),
-                    vericalSpace(16),
+                    verticalSpace(16),
                     findNearbyButton(),
                   ],
                 ),

@@ -66,7 +66,7 @@ class _SignUpFormState extends State<SignUpForm> {
             },
             controller: context.read<SignUpCubit>().nameController,
           ),
-          vericalSpace(18),
+          verticalSpace(18),
           AppTextFormFeild(
             hintText: 'Email',
             validator: (value) {
@@ -78,7 +78,7 @@ class _SignUpFormState extends State<SignUpForm> {
             },
             controller: context.read<SignUpCubit>().emailController,
           ),
-          vericalSpace(18),
+          verticalSpace(18),
           AppTextFormFeild(
             hintText: 'phone',
             validator: (value) {
@@ -90,7 +90,7 @@ class _SignUpFormState extends State<SignUpForm> {
             },
             controller: context.read<SignUpCubit>().phoneController,
           ),
-          vericalSpace(18),
+          verticalSpace(18),
           AppTextFormFeild(
             hintText: 'password',
             validator: (value) {
@@ -110,7 +110,7 @@ class _SignUpFormState extends State<SignUpForm> {
                     ? Icons.visibility_off
                     : Icons.visibility_outlined)),
           ),
-          vericalSpace(18),
+          verticalSpace(18),
           AppTextFormFeild(
             hintText: 'Password Confirmation',
             validator: (value) {
@@ -132,7 +132,7 @@ class _SignUpFormState extends State<SignUpForm> {
                     ? Icons.visibility_off
                     : Icons.visibility_outlined)),
           ),
-          vericalSpace(24),
+          verticalSpace(24),
           PasswordValidation(
               hasLowerCase: hasLowerCase,
               hasUpperCase: hasUpperCase,
