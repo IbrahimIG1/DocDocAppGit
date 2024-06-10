@@ -42,7 +42,13 @@ class TextStyles {
     fontSize: 11.sp,
     fontWeight: FontWeightHelper.regular,
     color: ColorsManager.greyLight,
-  );static TextStyle font12GreyDarkRegular = TextStyle(
+  );
+  static TextStyle font12GreyLightBold = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: ColorsManager.greyLight,
+  );
+  static TextStyle font12GreyDarkRegular = TextStyle(
     fontSize: 12.sp,
     fontWeight: FontWeightHelper.regular,
     color: ColorsManager.greyDark,

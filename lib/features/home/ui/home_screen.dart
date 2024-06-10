@@ -6,6 +6,8 @@ import 'package:doc_doc_app/features/home/ui/widgets/hi_name.dart';
 import 'package:doc_doc_app/features/home/ui/widgets/nofication_icon.dart';
 import 'package:flutter/material.dart';
 
+import 'widgets/doctor_listview.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -29,9 +31,12 @@ class HomeScreen extends StatelessWidget {
               verticalSpace(18),
               const DoctorBlueContainer(),
               verticalSpace(18),
-              const DoctorSpecialitySeeAll(),
+              const DoctorSpecialitySeeAll(text: 'Doctor Speciality'),
               verticalSpace(18),
               const DoctorSpecialityListView(),
+              verticalSpace(18),
+              const DoctorSpecialitySeeAll(text: 'Recommendation Doctor'),
+              const DoctorListView(),
               // Padding(
               //   padding: const EdgeInsets.all(16.0),
               //   child: Column(
