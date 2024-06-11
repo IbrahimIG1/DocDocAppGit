@@ -27,30 +27,32 @@ class DoctorListView extends StatelessWidget {
                   ),
                 ),
                 horizontalSpace(15),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Dr.Randy Wigham',
-                      style: TextStyles.font18GreyDarkSemiBold,
-                    ),
-                    verticalSpace(5),
-                    Text(
-                      'General | RSUD Gatot Subroto',
-                      style: TextStyles.font12GreyLightBold,
-                    ),
-                    verticalSpace(5),
-                    verticalSpace(5),
-                    Row(
-                      children: [
-                        Icon(Icons.star, color: Colors.yellow, size: 16),
-                        Text(
-                          '4.8 (4,279 reviews)',
-                          style: TextStyles.font12GreyLightBold,
-                        ),
-                      ],
-                    ),
-                  ],
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Dr.Randy Wigham',
+                        style: TextStyles.font18GreyDarkSemiBold,
+                      ),
+                      verticalSpace(5),
+                      Text(
+                        'General | RSUD Gatot Subroto',
+                        style: TextStyles.font12GreyLightBold,
+                      ),
+                      verticalSpace(5),
+                      verticalSpace(5),
+                      Row(
+                        children: [
+                          Icon(Icons.star, color: Colors.yellow, size: 16),
+                          Text(
+                            '4.8 (4,279 reviews)',
+                            style: TextStyles.font12GreyLightBold,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),

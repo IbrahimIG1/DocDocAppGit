@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
               verticalSpace(18),
               const DoctorSpecialityListView(),
               verticalSpace(18),
-              const DoctorSpecialitySeeAll(text: 'Recommendation Doctor'),
+              // const DoctorSpecialitySeeAll(text: 'Recommendation Doctor'),
               const DoctorListView(),
               // Padding(
               //   padding: const EdgeInsets.all(16.0),

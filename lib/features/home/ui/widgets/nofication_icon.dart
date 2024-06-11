@@ -18,8 +18,8 @@ class NotificationIcon extends StatelessWidget {
             color: ColorsManager.grey,
           ),
           Container(
-            width: 10.w,
-            height: 10.h,
+            width: 8.w,
+            height: 8.h,
             decoration:
                 BoxDecoration(color: Colors.red, shape: BoxShape.circle),
           )
