@@ -26,20 +26,20 @@ class LoginScreen extends StatelessWidget {
                 'Welcome Back',
                 style: TextStyles.font24BlueBold,
               ),
-              vericalSpace(10),
+              verticalSpace(10),
               Text(
                 'We\'re excited to have you back, can\'t wait to see what you\'ve been up to since you last logged in.',
                 style: TextStyles.font16GreyRegular.copyWith(height: 1.7),
               ),
-              vericalSpace(36),
+              verticalSpace(36),
               Column(children: [
                 EmailAndPassword(),
-                vericalSpace(24),
+                verticalSpace(24),
                 Align(
                     alignment: AlignmentDirectional.centerEnd,
                     child: Text('Forgot Password?',
                         style: TextStyles.font14BlueRegular)),
-                vericalSpace(40),
+                verticalSpace(40),
                 AppTextButton(
                   textStyle: TextStyles.font16WhiteMeduim,
                   text: 'Login',
@@ -47,9 +47,9 @@ class LoginScreen extends StatelessWidget {
                     validateThenDoLogin(context);
                   },
                 ),
-                vericalSpace(16),
+                verticalSpace(16),
                 const TeemsAndConditions(),
-                vericalSpace(60),
+                verticalSpace(60),
                 const NotHaveAccount(),
                 const LoginBlocListener(),
               ]),

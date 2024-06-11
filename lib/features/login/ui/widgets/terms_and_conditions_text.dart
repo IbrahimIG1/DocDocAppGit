@@ -14,12 +14,12 @@ class TeemsAndConditions extends StatelessWidget {
               style: TextStyles.font14GreyRegular),
           TextSpan(
               text: ' Terms & Conditions ',
-              style: TextStyles.font13DarkGreyRegular),
+              style: TextStyles.font13GreyDarkRegular),
           TextSpan(
               text: '\nand',
               style: TextStyles.font14GreyRegular.copyWith(height: 1.5)),
           TextSpan(
-              text: ' PrivacyPolicy.', style: TextStyles.font13DarkGreyRegular),
+              text: ' PrivacyPolicy.', style: TextStyles.font13GreyDarkRegular),
         ]));
   }
 }
