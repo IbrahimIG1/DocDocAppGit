@@ -1,11 +1,14 @@
 import 'package:doc_doc_app/core/Helpers/spacer_helper.dart';
+import 'package:doc_doc_app/features/home/logic/home_cubit.dart';
 import 'package:doc_doc_app/features/home/ui/widgets/doctor_blue_container.dart';
 import 'package:doc_doc_app/features/home/ui/widgets/doctor_speciality_listview.dart';
 import 'package:doc_doc_app/features/home/ui/widgets/doctor_speciality_see_all.dart';
 import 'package:doc_doc_app/features/home/ui/widgets/hi_name.dart';
 import 'package:doc_doc_app/features/home/ui/widgets/nofication_icon.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../logic/home_state.dart';
 import 'widgets/doctor_listview.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -33,10 +36,38 @@ class HomeScreen extends StatelessWidget {
               verticalSpace(18),
               const DoctorSpecialitySeeAll(text: 'Doctor Speciality'),
               verticalSpace(18),
-              const DoctorSpecialityListView(),
-              verticalSpace(18),
-              // const DoctorSpecialitySeeAll(text: 'Recommendation Doctor'),
-              const DoctorListView(),
+              BlocBuilder<HomeCubit, HomeState>(
+                buildWhen: (previous, current) =>
+                    current is SpecializationLoading ||
+                    current is SpecializationSuccess ||
+                    current is SpecializationError,
+                builder: (context, state) {
+                  return state.maybeWhen(
+                    specializationLoading: () {
+                      return const SizedBox(
+                        height: 100,
+                        child: Center(child: CircularProgressIndicator()),
+                      );
+                    },
+                    specializationSuccess: (specializationResponseModel) {
+                      return Expanded(
+                        child: Column(children: [
+                          const DoctorSpecialityListView(),
+                          verticalSpace(18),
+                          const DoctorListView(),
+                        ]),
+                      );
+                    },
+                    specializationError: (errorHandler) {
+                      return SizedBox.shrink();
+                    },
+                    orElse: () {
+                      return SizedBox.shrink();
+                    },
+                  );
+                },
+              ),
+
               // Padding(
               //   padding: const EdgeInsets.all(16.0),
               //   child: Column(
