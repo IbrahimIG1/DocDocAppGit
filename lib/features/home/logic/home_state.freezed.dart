@@ -21,7 +21,7 @@ mixin _$HomeState {
     required TResult Function() initial,
     required TResult Function() specializationLoading,
     required TResult Function(
-            SpecializationResponseModel specializationResponseModel)
+            SpecializationsResponseModel specializationResponseModel)
         specializationSuccess,
     required TResult Function(ErrorHandler errorHandler) specializationError,
   }) =>
@@ -30,7 +30,7 @@ mixin _$HomeState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? specializationLoading,
-    TResult? Function(SpecializationResponseModel specializationResponseModel)?
+    TResult? Function(SpecializationsResponseModel specializationResponseModel)?
         specializationSuccess,
     TResult? Function(ErrorHandler errorHandler)? specializationError,
   }) =>
@@ -39,7 +39,7 @@ mixin _$HomeState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? specializationLoading,
-    TResult Function(SpecializationResponseModel specializationResponseModel)?
+    TResult Function(SpecializationsResponseModel specializationResponseModel)?
         specializationSuccess,
     TResult Function(ErrorHandler errorHandler)? specializationError,
     required TResult orElse(),
@@ -132,7 +132,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() specializationLoading,
     required TResult Function(
-            SpecializationResponseModel specializationResponseModel)
+            SpecializationsResponseModel specializationResponseModel)
         specializationSuccess,
     required TResult Function(ErrorHandler errorHandler) specializationError,
   }) {
@@ -144,7 +144,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? specializationLoading,
-    TResult? Function(SpecializationResponseModel specializationResponseModel)?
+    TResult? Function(SpecializationsResponseModel specializationResponseModel)?
         specializationSuccess,
     TResult? Function(ErrorHandler errorHandler)? specializationError,
   }) {
@@ -156,7 +156,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? specializationLoading,
-    TResult Function(SpecializationResponseModel specializationResponseModel)?
+    TResult Function(SpecializationsResponseModel specializationResponseModel)?
         specializationSuccess,
     TResult Function(ErrorHandler errorHandler)? specializationError,
     required TResult orElse(),
@@ -254,7 +254,7 @@ class _$SpecializationLoadingImpl implements SpecializationLoading {
     required TResult Function() initial,
     required TResult Function() specializationLoading,
     required TResult Function(
-            SpecializationResponseModel specializationResponseModel)
+            SpecializationsResponseModel specializationResponseModel)
         specializationSuccess,
     required TResult Function(ErrorHandler errorHandler) specializationError,
   }) {
@@ -266,7 +266,7 @@ class _$SpecializationLoadingImpl implements SpecializationLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? specializationLoading,
-    TResult? Function(SpecializationResponseModel specializationResponseModel)?
+    TResult? Function(SpecializationsResponseModel specializationResponseModel)?
         specializationSuccess,
     TResult? Function(ErrorHandler errorHandler)? specializationError,
   }) {
@@ -278,7 +278,7 @@ class _$SpecializationLoadingImpl implements SpecializationLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? specializationLoading,
-    TResult Function(SpecializationResponseModel specializationResponseModel)?
+    TResult Function(SpecializationsResponseModel specializationResponseModel)?
         specializationSuccess,
     TResult Function(ErrorHandler errorHandler)? specializationError,
     required TResult orElse(),
@@ -340,7 +340,7 @@ abstract class _$$SpecializationSuccessImplCopyWith<$Res> {
           $Res Function(_$SpecializationSuccessImpl) then) =
       __$$SpecializationSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({SpecializationResponseModel specializationResponseModel});
+  $Res call({SpecializationsResponseModel specializationResponseModel});
 }
 
 /// @nodoc
@@ -360,7 +360,7 @@ class __$$SpecializationSuccessImplCopyWithImpl<$Res>
       null == specializationResponseModel
           ? _value.specializationResponseModel
           : specializationResponseModel // ignore: cast_nullable_to_non_nullable
-              as SpecializationResponseModel,
+              as SpecializationsResponseModel,
     ));
   }
 }
@@ -371,7 +371,7 @@ class _$SpecializationSuccessImpl implements SpecializationSuccess {
   const _$SpecializationSuccessImpl(this.specializationResponseModel);
 
   @override
-  final SpecializationResponseModel specializationResponseModel;
+  final SpecializationsResponseModel specializationResponseModel;
 
   @override
   String toString() {
@@ -405,7 +405,7 @@ class _$SpecializationSuccessImpl implements SpecializationSuccess {
     required TResult Function() initial,
     required TResult Function() specializationLoading,
     required TResult Function(
-            SpecializationResponseModel specializationResponseModel)
+            SpecializationsResponseModel specializationResponseModel)
         specializationSuccess,
     required TResult Function(ErrorHandler errorHandler) specializationError,
   }) {
@@ -417,7 +417,7 @@ class _$SpecializationSuccessImpl implements SpecializationSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? specializationLoading,
-    TResult? Function(SpecializationResponseModel specializationResponseModel)?
+    TResult? Function(SpecializationsResponseModel specializationResponseModel)?
         specializationSuccess,
     TResult? Function(ErrorHandler errorHandler)? specializationError,
   }) {
@@ -429,7 +429,7 @@ class _$SpecializationSuccessImpl implements SpecializationSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? specializationLoading,
-    TResult Function(SpecializationResponseModel specializationResponseModel)?
+    TResult Function(SpecializationsResponseModel specializationResponseModel)?
         specializationSuccess,
     TResult Function(ErrorHandler errorHandler)? specializationError,
     required TResult orElse(),
@@ -482,10 +482,10 @@ class _$SpecializationSuccessImpl implements SpecializationSuccess {
 
 abstract class SpecializationSuccess implements HomeState {
   const factory SpecializationSuccess(
-          final SpecializationResponseModel specializationResponseModel) =
+          final SpecializationsResponseModel specializationResponseModel) =
       _$SpecializationSuccessImpl;
 
-  SpecializationResponseModel get specializationResponseModel;
+  SpecializationsResponseModel get specializationResponseModel;
   @JsonKey(ignore: true)
   _$$SpecializationSuccessImplCopyWith<_$SpecializationSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -560,7 +560,7 @@ class _$SpecializationErrorImpl implements SpecializationError {
     required TResult Function() initial,
     required TResult Function() specializationLoading,
     required TResult Function(
-            SpecializationResponseModel specializationResponseModel)
+            SpecializationsResponseModel specializationResponseModel)
         specializationSuccess,
     required TResult Function(ErrorHandler errorHandler) specializationError,
   }) {
@@ -572,7 +572,7 @@ class _$SpecializationErrorImpl implements SpecializationError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? specializationLoading,
-    TResult? Function(SpecializationResponseModel specializationResponseModel)?
+    TResult? Function(SpecializationsResponseModel specializationResponseModel)?
         specializationSuccess,
     TResult? Function(ErrorHandler errorHandler)? specializationError,
   }) {
@@ -584,7 +584,7 @@ class _$SpecializationErrorImpl implements SpecializationError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? specializationLoading,
-    TResult Function(SpecializationResponseModel specializationResponseModel)?
+    TResult Function(SpecializationsResponseModel specializationResponseModel)?
         specializationSuccess,
     TResult Function(ErrorHandler errorHandler)? specializationError,
     required TResult orElse(),

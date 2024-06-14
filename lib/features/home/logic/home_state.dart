@@ -9,6 +9,6 @@ class HomeState with _$HomeState {
   const factory HomeState.initial() = _Initial;
 
   const factory HomeState.specializationLoading() = SpecializationLoading;
-  const factory HomeState.specializationSuccess(SpecializationResponseModel specializationResponseModel) = SpecializationSuccess;
+  const factory HomeState.specializationSuccess(SpecializationsResponseModel specializationResponseModel) = SpecializationSuccess;
   const factory HomeState.specializationError(ErrorHandler errorHandler) = SpecializationError;
 }

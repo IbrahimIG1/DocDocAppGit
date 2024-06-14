@@ -6,30 +6,34 @@ part of 'specializations_response_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-SpecializationResponseModel _$SpecializationResponseModelFromJson(
+SpecializationsResponseModel _$SpecializationsResponseModelFromJson(
         Map<String, dynamic> json) =>
-    SpecializationResponseModel(
-      (json['data'] as List<dynamic>?)
-          ?.map((e) => SpecializationData.fromJson(e as Map<String, dynamic>))
+    SpecializationsResponseModel(
+      specializationDataList: (json['data'] as List<dynamic>?)
+          ?.map((e) => e == null
+              ? null
+              : SpecializationsData.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$SpecializationResponseModelToJson(
-        SpecializationResponseModel instance) =>
+Map<String, dynamic> _$SpecializationsResponseModelToJson(
+        SpecializationsResponseModel instance) =>
     <String, dynamic>{
       'data': instance.specializationDataList,
     };
 
-SpecializationData _$SpecializationDataFromJson(Map<String, dynamic> json) =>
-    SpecializationData(
-      doctorsList: (json['doctors'] as List<dynamic>?)
-          ?.map((e) => Doctors.fromJson(e as Map<String, dynamic>))
-          .toList(),
+SpecializationsData _$SpecializationsDataFromJson(Map<String, dynamic> json) =>
+    SpecializationsData(
       id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
+      doctorsList: (json['doctors'] as List<dynamic>?)
+          ?.map((e) =>
+              e == null ? null : Doctors.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
-Map<String, dynamic> _$SpecializationDataToJson(SpecializationData instance) =>
+Map<String, dynamic> _$SpecializationsDataToJson(
+        SpecializationsData instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -42,8 +46,9 @@ Doctors _$DoctorsFromJson(Map<String, dynamic> json) => Doctors(
       email: json['email'] as String?,
       phone: json['phone'] as String?,
       photo: json['photo'] as String?,
-      adress: json['adress'] as String?,
-      degree: json['degree'] as String?,
+      gender: json['gender'] as String?,
+      price: (json['appoint_price'] as num?)?.toInt(),
+      degree: json['degree'] as String,
     );
 
 Map<String, dynamic> _$DoctorsToJson(Doctors instance) => <String, dynamic>{
@@ -52,6 +57,7 @@ Map<String, dynamic> _$DoctorsToJson(Doctors instance) => <String, dynamic>{
       'email': instance.email,
       'phone': instance.phone,
       'photo': instance.photo,
-      'adress': instance.adress,
+      'gender': instance.gender,
+      'appoint_price': instance.price,
       'degree': instance.degree,
     };

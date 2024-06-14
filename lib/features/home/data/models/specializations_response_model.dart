@@ -1,28 +1,35 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:json_annotation/json_annotation.dart';
 
 part 'specializations_response_model.g.dart';
 
 @JsonSerializable()
-class SpecializationResponseModel {
+class SpecializationsResponseModel {
   @JsonKey(name: 'data')
-  List<SpecializationData>? specializationDataList;
-  SpecializationResponseModel(
+  List<SpecializationsData?>? specializationDataList;
+
+  SpecializationsResponseModel({
     this.specializationDataList,
-  );
-  factory SpecializationResponseModel.fromJson(Map<String, dynamic> json) =>
-      _$SpecializationResponseModelFromJson(json);
+  });
+
+  factory SpecializationsResponseModel.fromJson(Map<String, dynamic> json) =>
+      _$SpecializationsResponseModelFromJson(json);
 }
 
 @JsonSerializable()
-class SpecializationData {
+class SpecializationsData {
   int? id;
   String? name;
   @JsonKey(name: 'doctors')
-  List<Doctors>? doctorsList;
-  SpecializationData({this.doctorsList, this.id, this.name});
-  factory SpecializationData.fromJson(Map<String, dynamic> json) =>
-      _$SpecializationDataFromJson(json);
+  List<Doctors?>? doctorsList;
+
+  SpecializationsData({
+    this.id,
+    this.name,
+    this.doctorsList,
+  });
+
+  factory SpecializationsData.fromJson(Map<String, dynamic> json) =>
+      _$SpecializationsDataFromJson(json);
 }
 
 @JsonSerializable()
@@ -32,17 +39,22 @@ class Doctors {
   String? email;
   String? phone;
   String? photo;
-  String? adress;
-  String? degree;
+  String? gender;
+  @JsonKey(name: 'appoint_price')
+  int? price;
+  String degree;
+
   Doctors({
     this.id,
     this.name,
     this.email,
     this.phone,
     this.photo,
-    this.adress,
-    this.degree,
+    this.gender,
+    this.price,
+    required this.degree,
   });
+
   factory Doctors.fromJson(Map<String, dynamic> json) =>
       _$DoctorsFromJson(json);
 }
