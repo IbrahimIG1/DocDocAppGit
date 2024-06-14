@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "556674368583",
+    "project_id": "flutter-app-distribution-a3dfb",
+    "storage_bucket": "flutter-app-distribution-a3dfb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:556674368583:android:7272e5d6884c6967665d62",
+        "android_client_info": {
+          "package_name": "com.example.doc_doc_app.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjaa7S60tYVWIED5vxSV7R9QW8H797DiM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
