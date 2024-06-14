@@ -1,4 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:doc_doc_app/core/Helpers/constants.dart';
+import 'package:doc_doc_app/core/Helpers/shared_pref_helper.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class DioFactory {
@@ -24,11 +26,17 @@ class DioFactory {
     }
   }
 
-  static addContentType() {
+  static addContentType() async{
     dio?.options.headers = {
-      'Accept':'application/json',
-      'Authorization':'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3ZjYXJlLmludGVncmF0aW9uMjUuY29tL2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNzE4MzExNjY1LCJleHAiOjE3MTgzOTgwNjUsIm5iZiI6MTcxODMxMTY2NSwianRpIjoib0QxSnY4endUb1VGTTZ0ZiIsInN1YiI6IjExMjkiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.1xY14Oiw9pT_WLhS9FgKqWmIMySTC-kXV3JYLZuLh68'
-  };
+      'Accept': 'application/json',
+      'Authorization':
+          'Bearer ${await SharedPrefHelper.getString(SharedPrefKey.userToken)}'
+    };
+  }
+
+  // to save token after get it again because the dio is init once and this function to save token after init dio and after token come 
+  static setUserTokenInHeader(String token) {
+    dio?.options.headers = {'Authorization': 'Bearer $token'};
   }
 
   /// this PrettyDioLogger To show me data moving to nd from api in terminal (only for that)

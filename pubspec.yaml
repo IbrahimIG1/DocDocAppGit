@@ -65,6 +65,8 @@ dependencies:
   build_runner: ^2.4.9
   # Flutter library to load and cache network images.
   cached_network_image: ^3.3.1
+  # Flutter plugin for reading and writing simple key-value pairs
+  shared_preferences: ^2.2.3
 
 dev_dependencies:
   flutter_test:
