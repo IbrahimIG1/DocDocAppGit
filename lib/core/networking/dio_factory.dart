@@ -11,7 +11,7 @@ class DioFactory {
 
   static Dio getDio() {
     // definition the time required to the server (connect and reverce)
-    Duration timeOut = Duration(seconds: 30);
+    Duration timeOut = const Duration(seconds: 30);
     if (dio == null) {
       dio = Dio();
       dio!

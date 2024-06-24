@@ -5,6 +5,7 @@ import 'package:doc_doc_app/features/home/ui/widgets/doctor_speciality_see_all.d
 import 'package:doc_doc_app/features/home/ui/widgets/hi_name.dart';
 import 'package:doc_doc_app/features/home/ui/widgets/nofication_icon.dart';
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -14,25 +15,30 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
-        child: Container(
-          margin: const EdgeInsets.fromLTRB(20, 16, 20, 20),
-          width: double.infinity,
-          child: Column(
-            children: [
-              const Row(
-                children: [
-                  HiName(),
-                  Spacer(),
-                  NotificationIcon(),
-                ],
-              ),
-              verticalSpace(18),
-              const DoctorBlueContainer(),
-              verticalSpace(18),
-              const DoctorSpecialitySeeAll(text: 'Doctor Speciality'),
-              verticalSpace(18),
-              const BlocBuilderSpecializationAndDoctor(),
-            ],
+        child: Shimmer.fromColors(
+          baseColor: Colors.grey.shade300,
+          highlightColor: Colors.grey.shade100,
+          enabled: true,
+          child: Container(
+            margin: const EdgeInsets.fromLTRB(20, 16, 20, 20),
+            width: double.infinity,
+            child: Column(
+              children: [
+                const Row(
+                  children: [
+                    HiName(),
+                    Spacer(),
+                    NotificationIcon(),
+                  ],
+                ),
+                verticalSpace(18),
+                const DoctorBlueContainer(),
+                verticalSpace(18),
+                const DoctorSpecialitySeeAll(text: 'Doctor Speciality'),
+                verticalSpace(18),
+                const BlocBuilderSpecializationAndDoctor(),
+              ],
+            ),
           ),
         ),
       ),

@@ -67,6 +67,10 @@ dependencies:
   cached_network_image: ^3.3.1
   # Flutter plugin for reading and writing simple key-value pairs
   shared_preferences: ^2.2.3
+  # Flutter Secure Storage provides API to store data in secure storage.
+  flutter_secure_storage: ^9.2.2
+  # easy way to add shimmer effect in Flutter project
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:
