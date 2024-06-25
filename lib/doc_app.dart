@@ -1,3 +1,4 @@
+import 'package:doc_doc_app/core/Helpers/constants.dart';
 import 'package:doc_doc_app/core/Routing/app_router.dart';
 import 'package:doc_doc_app/core/theming/colors.dart';
 import 'package:doc_doc_app/features/onbording/onbording_screen.dart';
@@ -23,7 +24,7 @@ class DocApp extends StatelessWidget {
           primaryColor: ColorsManager.mainBlue,
           scaffoldBackgroundColor: Colors.white,
         ),
-        initialRoute: Routes.onBordingScreen, 
+        initialRoute:isUserLoggedIn ?Routes.homeScreen :Routes.loginScreen, 
         onGenerateRoute: appRouter.generateRout,
         home: OnBordingScreen(),
       ),

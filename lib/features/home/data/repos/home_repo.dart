@@ -7,7 +7,7 @@ class HomeRepo {
   final HomeApiService _homeApiService;
   HomeRepo(this._homeApiService);
 
-  Future<ApiResult<SpecializationResponseModel>> getSpecialization() async {
+  Future<ApiResult<SpecializationsResponseModel>> getSpecialization() async {
     try {
   final response = await _homeApiService.getSpecialization();
   return ApiResult.success(response);

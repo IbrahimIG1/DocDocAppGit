@@ -1,3 +1,6 @@
+import 'package:doc_doc_app/core/Helpers/constants.dart';
+import 'package:doc_doc_app/core/Helpers/shared_pref_helper.dart';
+import 'package:doc_doc_app/core/networking/dio_factory.dart';
 import 'package:doc_doc_app/features/login/data/models/login_request_body.dart';
 import 'package:doc_doc_app/features/login/data/repos/login_repo.dart';
 import 'package:doc_doc_app/features/login/logic/cubit/login_state.dart';
@@ -24,13 +27,7 @@ class LoginCubit extends Cubit<LoginState> {
   الى فيه النتيجة بتاعة ال api اذا كان نجح او فشل 
 */
     response.when(success: (loginResponce) {
-      print("=> login Responce status :- ${loginResponce.status}");
-      print("=> login Responce code :- ${loginResponce.code}");
-      print("=> login Responce message :- ${loginResponce.message}");
-      print(
-          "=> login Responce userData token :- ${loginResponce.userData!.token}");
-      print(
-          "=> login Responce userData userName :- ${loginResponce.userData!.userName}");
+      saveUserToken(loginResponce.userData?.token ?? "");
 
       emit(LoginState.success(loginResponce));
     }, failure: (error) {
@@ -38,5 +35,12 @@ class LoginCubit extends Cubit<LoginState> {
 
       /// هنا انا بديلة ايررور هاندلر الى انا عامله وجواه ابياي مودل الى انا عاملة برضو وفيه المفروض الماسدج الى بتيجي لو فيه ايرور فى الريسبونس
     });
+  }
+
+// save token in shared prefrence
+  Future<void> saveUserToken(String token) async {
+    
+    await SharedPrefHelper.setData(SharedPrefKey.userToken, token);
+   await DioFactory.setUserTokenInHeader(token);
   }
 }

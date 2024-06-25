@@ -1,3 +1,6 @@
+import 'package:doc_doc_app/core/Helpers/constants.dart';
+import 'package:doc_doc_app/core/Helpers/extensions.dart';
+import 'package:doc_doc_app/core/Helpers/shared_pref_helper.dart';
 import 'package:doc_doc_app/core/Routing/app_router.dart';
 import 'package:doc_doc_app/core/di/dependency_injection.dart';
 import 'package:doc_doc_app/doc_app.dart';
@@ -14,7 +17,21 @@ void main() async {
   setupGetIt();
   //  to fix text hiddin error in release mode
   await ScreenUtil.ensureScreenSize();
+  await checkIfLoggedIn();
   runApp(DocApp(
     appRouter: AppRouter(),
   ));
+}
+
+checkIfLoggedIn() async {
+  String? userToken = await SharedPrefHelper.getString(SharedPrefKey.userToken);
+  print(userToken);
+  
+  if (userToken.isNullOrEmpty()) {
+    isUserLoggedIn = false;
+  } else {
+    isUserLoggedIn = true;
+  }
+  print(isUserLoggedIn);
+
 }
