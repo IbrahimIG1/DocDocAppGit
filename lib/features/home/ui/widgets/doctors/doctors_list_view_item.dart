@@ -23,7 +23,7 @@ class DoctorsListViewItem extends StatelessWidget {
             height: 120.h,
             imageUrl:
                 "https://img.freepik.com/free-photo/handsome-man-holding-something_1368-836.jpg?w=360&t=st=1718036990~exp=1718037590~hmac=4de4558795610276bb7fe356bdb0ccd13cee1366d102b0806cfe7da7cfe66430",
-            placeholder: (context, url) => CircularProgressIndicator(),
+            
             errorWidget: (context, url, error) => Icon(Icons.error),
           ),
           // ClipRRect(
@@ -50,7 +50,7 @@ class DoctorsListViewItem extends StatelessWidget {
                   style: TextStyles.font12GreyLightBold,
                 ),
                 verticalSpace(5),
-                verticalSpace(5),
+                
                 Row(
                   children: [
                     Icon(Icons.star, color: Colors.yellow, size: 16),

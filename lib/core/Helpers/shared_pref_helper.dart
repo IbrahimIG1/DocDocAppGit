@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPrefHelper {
@@ -47,5 +48,16 @@ class SharedPrefHelper {
     debugPrint('SharedPrefHelper : get data with this key: $key');
     SharedPreferences sharedPrefHelper = await SharedPreferences.getInstance();
     return sharedPrefHelper.getInt(key);
+  }
+
+  static setSequreString(String key,dynamic value) async {
+    debugPrint('FlutterSecureStorage : set data $value with this key: $key');
+    const flutterSecureStorage = FlutterSecureStorage();
+    return await flutterSecureStorage.write(key: key,value: value);
+  }
+  static getSequreString(String key) async {
+    debugPrint('FlutterSecureStorage : get data with this key: $key');
+    const flutterSecureStorage = FlutterSecureStorage();
+    return await flutterSecureStorage.read(key: key);
   }
 }
