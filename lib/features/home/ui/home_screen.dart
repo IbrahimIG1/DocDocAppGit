@@ -6,7 +6,6 @@ import 'package:doc_doc_app/features/home/ui/widgets/doctors/doctors_bloc_builde
 import 'package:doc_doc_app/features/home/ui/widgets/hi_name.dart';
 import 'package:doc_doc_app/features/home/ui/widgets/nofication_icon.dart';
 import 'package:flutter/material.dart';
-import 'package:shimmer/shimmer.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
