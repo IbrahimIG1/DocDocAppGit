@@ -3,12 +3,18 @@ import 'package:doc_doc_app/core/networking/api_error_handler.dart';
 import 'package:doc_doc_app/features/home/data/models/specializations_response_model.dart';
 import 'package:doc_doc_app/features/home/data/repos/home_repo.dart';
 import 'package:doc_doc_app/features/home/logic/home_state.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeCubit extends Cubit<HomeState> {
   final HomeRepo _homeRepo;
   HomeCubit(this._homeRepo) : super(const HomeState.initial());
-
+  static HomeCubit get(context) => BlocProvider.of(context);
+  //  animation variables
+  AnimationController? animationController;
+  Animation? animation;
+  bool isStart = true;
+  bool isAnimate = false;
   List<SpecializationsData?>? specializationDataList = [];
   getspecialization() async {
     emit(HomeState.specializationLoading());
@@ -29,6 +35,18 @@ class HomeCubit extends Cubit<HomeState> {
     List<Doctors?>? doctorsList =
         getDoctorsListBySpecializationsId(specializationId!);
     if (!doctorsList.isListNullOrEmpty()) {
+      if (isStart) {
+        Future.delayed(const Duration(milliseconds: 100), () {
+          isAnimate = true;
+          isStart = true;
+
+          emit(HomeState.doctorsSuccess(doctorsList));
+        });
+      } else {
+        isAnimate = false;
+        isStart = true;
+        emit(HomeState.doctorsSuccess(doctorsList));
+      }
       emit(HomeState.doctorsSuccess(doctorsList));
     } else {
       HomeState.doctorsError(

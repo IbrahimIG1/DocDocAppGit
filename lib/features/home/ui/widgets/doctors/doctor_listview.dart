@@ -9,9 +9,9 @@ class DoctorListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: ListView.builder(
-        itemCount: doctorsList?.length,
-        itemBuilder: (context, index) {
+      child: AnimatedList(
+       initialItemCount: doctorsList!.length,
+        itemBuilder: (context, index,animation) {
           return DoctorsListViewItem(
               itemIndex: index, doctorsModel: doctorsList?[index]);
         },

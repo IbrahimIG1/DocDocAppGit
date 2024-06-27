@@ -7,50 +7,56 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SpecializationItem extends StatelessWidget {
   final int index;
+  final Color color;
   final int selectedItem;
   final SpecializationsData? specializationDatalist;
-  const SpecializationItem(
-      {super.key,
-      required this.index,
-      required this.specializationDatalist,
-      required this.selectedItem});
+  const SpecializationItem({
+    super.key,
+    required this.index,
+    required this.specializationDatalist,
+    required this.selectedItem,
+    required this.color,
+  });
 
+  @override
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(left: index == 0 ? 0 : 24.w),
       child: Column(
         children: [
-          selectedItem == index
-              ? Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black, width: 1),
-                    shape: BoxShape.circle,
-                  ),
-                  child: CircleAvatar(
-                    backgroundColor: ColorsManager.simpleGrey,
-                    radius: 28.w,
-                    child: Image.asset(
-                      'assets/icons/doctor_europe_icon.png',
-                      width: 43.w,
-                      height: 43.h,
-                    ),
-                  ),
-                )
-              : CircleAvatar(
-                  backgroundColor: ColorsManager.simpleGrey,
-                  radius: 28.w,
-                  child: Image.asset(
-                    'assets/icons/doctor_europe_icon.png',
-                    width: 40.w,
-                    height: 40.h,
-                  ),
-                ),
+          AnimatedContainer(
+            duration: const Duration(seconds: 1),
+            decoration: BoxDecoration(
+              border: selectedItem == index
+                  ? Border.all(color: Colors.black, width: 1)
+                  : Border.all(width: 0),
+              shape: BoxShape.circle,
+            ),
+            child: CircleAvatar(
+              backgroundColor: ColorsManager.simpleGrey,
+              radius: 28.w,
+              child: Image.asset(
+                'assets/icons/doctor_europe_icon.png',
+                width: selectedItem == index ? 40.w : 40.w,
+                height: selectedItem == index ? 43.h : 40.h,
+              ),
+            ),
+          ),
+          //  CircleAvatar(
+          //     backgroundColor: ColorsManager.simpleGrey,
+          //     radius: 28.w,
+          //     child: Image.asset(
+          //       'assets/icons/doctor_europe_icon.png',
+          //       width: 40.w,
+          //       height: 40.h,
+          //     ),
+          //   ),
           verticalSpace(10),
-          Text(
-            specializationDatalist!.name ?? 'specialization',
-            style: selectedItem==index? TextStyles.font14BlueRegular:TextStyles.font12GreyDarkRegular,
-          )
+          Text(specializationDatalist!.name ?? 'specialization',
+              style: selectedItem == index
+                  ? TextStyles.font14BlueRegular.copyWith(color: color)
+                  : TextStyles.font12GreyDarkRegular),
         ],
       ),
     );
